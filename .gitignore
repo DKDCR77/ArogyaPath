@@ -37,6 +37,12 @@ __pycache__/
 venv/
 env/
 
+# ML models (too large for GitHub)
+*.keras
+*.h5
+*.pkl
+*.joblib
+
 # uploads
 uploads/
 backend/uploads/
