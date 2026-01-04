@@ -177,16 +177,6 @@ const HospitalMap: React.FC<HospitalMapProps> = ({ hospitals, userLocation, clas
                       Call
                     </a>
                   )}
-                  {hospital.website && (
-                    <a
-                      href={hospital.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-gray-500 text-white px-2 py-1 rounded text-xs hover:bg-gray-600 transition-colors"
-                    >
-                      Website
-                    </a>
-                  )}
                   <a
                     href={`https://www.google.com/maps/dir/?api=1&destination=${hospital.latitude},${hospital.longitude}`}
                     target="_blank"
