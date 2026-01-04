@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-700;
+  }
+  body {
+    @apply text-white bg-black;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-gray-900/80 backdrop-blur-lg border border-cyan-500/20;
+  }
+  
+  .hospital-card {
+    @apply glass-effect rounded-xl p-6 shadow-xl shadow-cyan-500/10 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:scale-105;
+  }
+  
+  .search-input {
+    @apply w-full px-6 py-4 rounded-full border-2 border-cyan-500/50 focus:border-cyan-500 focus:outline-none bg-gray-900/90 backdrop-blur-sm shadow-lg text-lg text-white placeholder-gray-400;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent;
+  }
+}
+
+.floating-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.medical-grid {
+  background-image: 
+    linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
