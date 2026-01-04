@@ -169,9 +169,9 @@ const HospitalMap: React.FC<HospitalMapProps> = ({ hospitals, userLocation, clas
                 </div>
                 
                 <div className="flex space-x-2 mt-3">
-                  {hospital.contact_number && (
+                  {hospital.phone && (
                     <a
-                      href={`tel:${hospital.contact_number}`}
+                      href={`tel:${hospital.phone}`}
                       className="bg-blue-500 text-white px-2 py-1 rounded text-xs hover:bg-blue-600 transition-colors"
                     >
                       Call
