@@ -49,6 +49,7 @@ interface Hospital {
   pincode: string;
   phone: string;
   specialty: string;
+  type?: string;
   pmjay_empaneled: boolean;
   latitude?: number;
   longitude?: number;

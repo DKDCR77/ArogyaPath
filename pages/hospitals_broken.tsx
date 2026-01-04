@@ -20,18 +20,19 @@ const HospitalMap = dynamic(() => import('@/components/HospitalMap'), {
 
 interface Hospital {
   _id: string
-  hospital_name: string
-  state: string
-  district: string
+  name: string
+  address: string
   city: string
+  state: string
+  district?: string
   pincode: string
-  ayushman_bharat_support: string
+  phone: string
+  specialty: string
+  type?: string
+  pmjay_empaneled: boolean
   latitude?: number
   longitude?: number
   distance?: number
-  hospital_type?: string
-  contact_number?: string
-  website?: string
 }
 
 export default function FindHospitals() {
@@ -433,9 +434,9 @@ export default function FindHospitals() {
                     >
                       <div className="flex justify-between items-start mb-3">
                         <h3 className="text-xl font-semibold text-gray-900 flex-1">
-                          {hospital.hospital_name}
+                          {hospital.name}
                         </h3>
-                        {hospital.ayushman_bharat_support === 'Yes' && (
+                        {hospital.pmjay_empaneled && (
                           <span className="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full font-medium ml-3">
                             ✅ Ayushman Bharat
                           </span>
@@ -455,18 +456,18 @@ export default function FindHospitals() {
                           </div>
                         )}
                         
-                        {hospital.hospital_type && (
+                        {hospital.type && (
                           <div className="flex items-center">
                             <HeartIcon className="w-5 h-5 mr-3 text-gray-400" />
-                            <span>{hospital.hospital_type}</span>
+                            <span>{hospital.type}</span>
                           </div>
                         )}
                       </div>
                       
                       <div className="flex space-x-3 mt-6">
-                        {hospital.contact_number && (
+                        {hospital.phone && (
                           <a
-                            href={`tel:${hospital.contact_number}`}
+                            href={`tel:${hospital.phone}`}
                             className="flex items-center bg-blue-50 text-blue-600 hover:bg-blue-100 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
                           >
                             <PhoneIcon className="w-4 h-4 mr-2" />
